@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+//PARA EL WEBIOPI, SE PONE EN LA CONFIG /etc/webiopi/config
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>WebIOPi | Light Control</title>
+    <script type="text/javascript" src="/webiopi.js"></script>
+    <script type="text/javascript">
+    webiopi().ready(function() {
+        // Create a "Light" labeled button for GPIO 17
+        	var button1 = webiopi().createGPIOButton(18, "Light1");
+		var button2 = webiopi().createGPIOButton(23, "Light2");
+		var button3 = webiopi().createGPIOButton(24, "Light3");        
+		var button4 = webiopi().createGPIOButton(25, "Light4");
+		var button5 = webiopi().createGPIOButton(8, "Light5");
+		var button6 = webiopi().createGPIOButton(7, "Light6");        
+		var button7 = webiopi().createGPIOButton(20, "Light7");
+		var button8 = webiopi().createGPIOButton(21, "Light8");        
+				
+		// Append button to HTML element with ID="controls" using jQuery
+    $("#controls").append(button1);
+		$("#controls").append(button2);
+		$("#controls").append(button3);
+		$("#controls").append(button4);        
+		$("#controls").append(button5);
+		$("#controls").append(button6);
+		$("#controls").append(button7);
+		$("#controls").append(button8);		
+		
+		// Refresh GPIO buttons
+        // pass true to refresh repeatedly of false to refresh once
+                webiopi().refreshGPIO(true);
+    });
+
+    </script>
+    <style type="text/css">
+        button {
+            display: block;
+            margin: 5px 5px 5px 5px;
+            width: 160px;
+            height: 45px;
+            font-size: 24pt;
+            font-weight: bold;
+            color: white;
+        }
+
+        #gpio18.LOW {
+            background-color: Black;
+        }
+
+        #gpio18.HIGH {
+            background-color: Blue;
+        }
+		
+	#gpio23.LOW {
+            background-color: Black;
+        }
+
+        #gpio23.HIGH {
+            background-color: Blue;
+        }
+		
+	#gpio24.LOW {
+            background-color: Black;
+        }
+
+        #gpio24.HIGH {
+            background-color: Blue;
+        }
+
+ 	#gpio25.LOW {
+            background-color: Black;
+        }
+
+        #gpio25.HIGH {
+            background-color: Blue;
+        }
+
+ 	#gpio8.LOW {
+            background-color: Black;
+        }
+
+        #gpio8.HIGH {
+            background-color: Blue;
+        }
+
+ 	#gpio7.LOW {
+            background-color: Black;
+        }
+
+        #gpio7.HIGH {
+            background-color: Blue;
+        }
+
+	#gpio20.LOW {
+            background-color: Black;
+        }
+
+        #gpio20.HIGH {
+            background-color: Blue;
+        }
+
+ 	#gpio21.LOW {
+            background-color: Black;
+        }
+
+        #gpio21.HIGH {
+            background-color: Blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="controls" align="center"></div>
+</body>
+</html>
